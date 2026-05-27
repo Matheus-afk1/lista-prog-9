@@ -1,1 +1,40 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
 
+struct Pessoa {
+    string nome;
+    string endereco;
+    string telefone;
+};
+
+bool ordenar(Pessoa a, Pessoa b) {
+    return a.nome < b.nome;
+}
+
+int main() {
+    Pessoa p[15];
+
+    for (int i = 0; i < 15; i++) {
+        cout << "Nome: ";
+        cin >> p[i].nome;
+
+        cout << "Endereco: ";
+        cin >> p[i].endereco;
+
+        cout << "Telefone: ";
+        cin >> p[i].telefone;
+    }
+
+    sort(p, p + 15, ordenar);
+
+    cout << "\nORDEM ALFABETICA\n";
+
+    for (int i = 0; i < 15; i++) {
+        cout << p[i].nome << endl;
+        cout << p[i].endereco << endl;
+        cout << p[i].telefone << endl;
+    }
+
+    return 0;
+}
