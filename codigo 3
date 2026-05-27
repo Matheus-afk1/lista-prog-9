@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+struct Acao {
+    string nome;
+    double valor;
+};
+int main() {
+    Acao acoes[3];
+    double soma = 0, media, desvio = 0;
+    for (int i = 0; i < 3; i++) {
+        cout << "Nome: ";
+        cin >> acoes[i].nome;
+        cout << "Valor: ";
+        cin >> acoes[i].valor;
+        soma += acoes[i].valor;
+    }
+    media = soma / 3;
+    for (int i = 0; i < 3; i++) {
+        desvio += pow(acoes[i].valor - media, 2);
+    }
+    desvio = sqrt(desvio / 3);
+    cout << "Media: " << media << endl;
+    cout << "Desvio padrao: " << desvio << endl;
+    return 0;
+}
