@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct bolsa {
+    string empresa;
+    string area;
+    double valora;
+    double valorant;
+    double varia;
+};
+int main() {
+    bolsa acoes[3];
+    for(int i = 0; i < 3; i++){
+        cout << "\nInsira o nome da empresa: ";
+        cin.ignore();
+        getline(cin, acoes[i].empresa);
+        cout << "Insira a area da empresa: ";
+        getline(cin, acoes[i].area);
+        cout << "Insira o valor atual da empresa: ";
+        cin >> acoes[i].valora;
+        cout << "Insira o valor anterior da empresa: ";
+        cin >> acoes[i].valorant;
+        acoes[i].varia =
+            ((acoes[i].valora - acoes[i].valorant)
+            / acoes[i].valorant) * 100;
+    }
+    cout << "\n===== RESULTADO =====\n";
+    for(int i = 0; i < 3; i++){
+        cout << "\nEmpresa: " << acoes[i].empresa << endl;
+        cout << "Area: " << acoes[i].area << endl;
+        cout << "Valor atual: " << acoes[i].valora << endl;
+        cout << "Valor anterior: " << acoes[i].valorant << endl;
+        cout << "Variacao (%): " << acoes[i].varia << endl;
+    }
+
+    return 0;
+}
