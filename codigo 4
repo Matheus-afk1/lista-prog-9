@@ -1,1 +1,29 @@
+#include <iostream>
+using namespace std;
 
+struct Pessoa {
+    string nome;
+    int idade;
+    string endereco;
+};
+
+int main() {
+    Pessoa p;
+
+    cout << "Nome: ";
+    cin >> p.nome;
+
+    cout << "Idade: ";
+    cin >> p.idade;
+
+    cout << "Endereco: ";
+    cin >> p.endereco;
+
+    cout << "\nDADOS\n";
+
+    cout << p.nome << endl;
+    cout << p.idade << endl;
+    cout << p.endereco << endl;
+
+    return 0;
+}
