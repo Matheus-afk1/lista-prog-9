@@ -1,1 +1,73 @@
+#include <iostream>
+using namespace std;
 
+struct Aluno {
+    int matricula;
+    string nome;
+    double n1;
+    double n2;
+    double n3;
+    double media;
+};
+
+int main() {
+    Aluno a[5];
+
+    int maiorN1 = 0;
+    int maiorMedia = 0;
+    int menorMedia = 0;
+
+    for (int i = 0; i < 5; i++) {
+        cout << "Nome: ";
+        cin >> a[i].nome;
+
+        cout << "Matricula: ";
+        cin >> a[i].matricula;
+
+        cout << "Nota 1: ";
+        cin >> a[i].n1;
+
+        cout << "Nota 2: ";
+        cin >> a[i].n2;
+
+        cout << "Nota 3: ";
+        cin >> a[i].n3;
+
+        a[i].media =
+        (a[i].n1 + a[i].n2 + a[i].n3) / 3;
+
+        if (a[i].n1 > a[maiorN1].n1) {
+            maiorN1 = i;
+        }
+
+        if (a[i].media > a[maiorMedia].media) {
+            maiorMedia = i;
+        }
+
+        if (a[i].media < a[menorMedia].media) {
+            menorMedia = i;
+        }
+    }
+
+    cout << "\nMaior nota da P1\n";
+    cout << a[maiorN1].nome << endl;
+
+    cout << "\nMaior media\n";
+    cout << a[maiorMedia].nome << endl;
+
+    cout << "\nMenor media\n";
+    cout << a[menorMedia].nome << endl;
+
+    cout << "\nRESULTADO\n";
+
+    for (int i = 0; i < 5; i++) {
+        if (a[i].media >= 6) {
+            cout << a[i].nome << " aprovado" << endl;
+        }
+        else {
+            cout << a[i].nome << " reprovado" << endl;
+        }
+    }
+
+    return 0;
+}
