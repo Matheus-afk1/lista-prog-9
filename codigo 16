@@ -1,1 +1,81 @@
+#include <iostream>
+using namespace std;
 
+struct Filme {
+    string nome;
+    int ano;
+    int duracao;
+};
+
+struct Diretor {
+    string nome;
+    int qtdFilmes;
+    Filme filmes[20];
+};
+
+int main() {
+    Diretor diretores[10];
+
+    for (int i = 0; i < 10; i++) {
+        cout << "Nome do diretor: ";
+        cin >> diretores[i].nome;
+
+        cout << "Quantidade de filmes: ";
+        cin >> diretores[i].qtdFilmes;
+
+        for (int j = 0;
+             j < diretores[i].qtdFilmes;
+             j++) {
+
+            cout << "Nome do filme: ";
+            cin >> diretores[i].filmes[j].nome;
+
+            cout << "Ano: ";
+            cin >> diretores[i].filmes[j].ano;
+
+            cout << "Duracao: ";
+            cin >> diretores[i].filmes[j].duracao;
+        }
+    }
+
+    string busca;
+
+    while (true) {
+        cout << "\nBuscar diretor: ";
+        cin >> busca;
+
+        if (busca == "0") {
+            break;
+        }
+
+        bool achou = false;
+
+        for (int i = 0; i < 10; i++) {
+            if (diretores[i].nome == busca) {
+                achou = true;
+
+                cout << "\nFILMES\n";
+
+                for (int j = 0;
+                     j < diretores[i].qtdFilmes;
+                     j++) {
+
+                    cout << diretores[i]
+                    .filmes[j].nome << endl;
+
+                    cout << diretores[i]
+                    .filmes[j].ano << endl;
+
+                    cout << diretores[i]
+                    .filmes[j].duracao << endl;
+                }
+            }
+        }
+
+        if (!achou) {
+            cout << "Diretor nao encontrado\n";
+        }
+    }
+
+    return 0;
+}
