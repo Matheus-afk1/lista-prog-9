@@ -1,1 +1,60 @@
+#include <iostream>
+using namespace std;
 
+struct Data {
+    int dia;
+    int mes;
+    int ano;
+};
+
+struct Funcionario {
+    string nome;
+    int idade;
+    char sexo;
+    string cpf;
+    Data nascimento;
+    int setor;
+    string cargo;
+    double salario;
+};
+
+int main() {
+    Funcionario f;
+
+    cout << "Nome: ";
+    cin >> f.nome;
+
+    cout << "Idade: ";
+    cin >> f.idade;
+
+    cout << "Sexo: ";
+    cin >> f.sexo;
+
+    cout << "CPF: ";
+    cin >> f.cpf;
+
+    cout << "Dia nascimento: ";
+    cin >> f.nascimento.dia;
+
+    cout << "Mes nascimento: ";
+    cin >> f.nascimento.mes;
+
+    cout << "Ano nascimento: ";
+    cin >> f.nascimento.ano;
+
+    cout << "Codigo setor: ";
+    cin >> f.setor;
+
+    cout << "Cargo: ";
+    cin >> f.cargo;
+
+    cout << "Salario: ";
+    cin >> f.salario;
+
+    cout << "\nFUNCIONARIO\n";
+
+    cout << f.nome << endl;
+    cout << f.salario << endl;
+
+    return 0;
+}
