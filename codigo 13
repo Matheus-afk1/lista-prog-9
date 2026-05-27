@@ -1,1 +1,55 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
 
+struct Carta {
+    string naipe;
+    string valor;
+};
+
+int main() {
+    Carta jogador1[5];
+    Carta jogador2[5];
+
+    string naipes[4] =
+    {"Copas", "Espadas", "Ouros", "Paus"};
+
+    string valores[13] =
+    {"A", "2", "3", "4", "5", "6",
+     "7", "8", "9", "10", "J", "Q", "K"};
+
+    srand(time(0));
+
+    for (int i = 0; i < 5; i++) {
+        jogador1[i].naipe =
+        naipes[rand() % 4];
+
+        jogador1[i].valor =
+        valores[rand() % 13];
+
+        jogador2[i].naipe =
+        naipes[rand() % 4];
+
+        jogador2[i].valor =
+        valores[rand() % 13];
+    }
+
+    cout << "\nJOGADOR 1\n";
+
+    for (int i = 0; i < 5; i++) {
+        cout << jogador1[i].valor
+             << " de "
+             << jogador1[i].naipe << endl;
+    }
+
+    cout << "\nJOGADOR 2\n";
+
+    for (int i = 0; i < 5; i++) {
+        cout << jogador2[i].valor
+             << " de "
+             << jogador2[i].naipe << endl;
+    }
+
+    return 0;
+}
