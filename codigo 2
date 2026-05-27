@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+struct Acao {
+    string nome;
+    double valor;
+};
+
+int main() {
+    Acao acoes[3];
+    double limite;
+
+    for (int i = 0; i < 3; i++) {
+        cout << "Nome: ";
+        cin >> acoes[i].nome;
+
+        cout << "Valor: ";
+        cin >> acoes[i].valor;
+    }
+
+    cout << "Digite um valor limite: ";
+    cin >> limite;
+
+    cout << "\nAcoes abaixo do valor informado:\n";
+
+    for (int i = 0; i < 3; i++) {
+        if (acoes[i].valor < limite) {
+            cout << acoes[i].nome
+                 << " - " << acoes[i].valor << endl;
+        }
+    }
+
+    return 0;
+}
