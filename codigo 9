@@ -1,1 +1,48 @@
+#include <iostream>
+using namespace std;
 
+struct Aluno {
+    int matricula;
+    string nome;
+    int codigo;
+    double nota1;
+    double nota2;
+    double media;
+};
+
+int main() {
+    Aluno alunos[10];
+    int n;
+
+    cout << "Quantidade de alunos: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Nome: ";
+        cin >> alunos[i].nome;
+
+        cout << "Matricula: ";
+        cin >> alunos[i].matricula;
+
+        cout << "Codigo disciplina: ";
+        cin >> alunos[i].codigo;
+
+        cout << "Nota 1: ";
+        cin >> alunos[i].nota1;
+
+        cout << "Nota 2: ";
+        cin >> alunos[i].nota2;
+
+        alunos[i].media =
+        (alunos[i].nota1 + alunos[i].nota2 * 2) / 3;
+    }
+
+    cout << "\nLISTAGEM FINAL\n";
+
+    for (int i = 0; i < n; i++) {
+        cout << alunos[i].nome << endl;
+        cout << alunos[i].media << endl;
+    }
+
+    return 0;
+}
