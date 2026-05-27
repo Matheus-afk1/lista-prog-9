@@ -1,1 +1,55 @@
+#include <iostream>
+using namespace std;
 
+struct Aluno {
+    string nome;
+    int matricula;
+    double media;
+};
+
+int main() {
+    Aluno alunos[10];
+    Aluno aprovados[10];
+    Aluno reprovados[10];
+
+    int ap = 0;
+    int rep = 0;
+
+    for (int i = 0; i < 10; i++) {
+        cout << "Nome: ";
+        cin >> alunos[i].nome;
+
+        cout << "Matricula: ";
+        cin >> alunos[i].matricula;
+
+        cout << "Media final: ";
+        cin >> alunos[i].media;
+
+        if (alunos[i].media >= 5) {
+            aprovados[ap] = alunos[i];
+            ap++;
+        }
+        else {
+            reprovados[rep] = alunos[i];
+            rep++;
+        }
+    }
+
+    cout << "\nAPROVADOS\n";
+
+    for (int i = 0; i < ap; i++) {
+        cout << aprovados[i].nome << endl;
+        cout << aprovados[i].matricula << endl;
+        cout << aprovados[i].media << endl;
+    }
+
+    cout << "\nREPROVADOS\n";
+
+    for (int i = 0; i < rep; i++) {
+        cout << reprovados[i].nome << endl;
+        cout << reprovados[i].matricula << endl;
+        cout << reprovados[i].media << endl;
+    }
+
+    return 0;
+}
